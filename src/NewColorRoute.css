@@ -1,0 +1,26 @@
+.NewColorRoute {
+    position: absolute;
+    /* background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIdidfjJSjhaPkSEfWXte53eEgeq2DYt7rkL8VEECjoo4s_K1jfzzIhotZDBMAB-pYt5A&usqp=CAU'); */
+    background-image:url('https://t4.ftcdn.net/jpg/01/00/39/77/360_F_100397726_4is9WU6rKiJpKzYDXanqnSbB2Wf5bczV.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.NewColorRoute h2 {
+    margin-top: 3em;
+    margin-bottom: 0;
+    font-size: xx-large;
+}
+
+.NewColorRoute form {
+    margin: 20%;
+    padding: 2em;
+    background-color: rgb(255, 255, 255, 0.5);
+
+}
+
+
+.NewColorRoute form button {
+    margin-top:1em;
+}

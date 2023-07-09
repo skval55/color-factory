@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./App.css";
+import { useState } from "react";
+import ColorRoute from "./ColorRoute";
+import ColorsRoute from "./ColorsRoute";
+import NewColorRoute from "./NewColorRoute";
 
 function App() {
+  const [colors, setColors] = useState([
+    { name: "red", rgbVal: "#ff0000" },
+    { name: "green", rgbVal: "#00ff00" },
+    { name: "blue", rgbVal: "#0000ff" },
+  ]);
+  const addColor = (newColor) => {
+    setColors([...colors, newColor]);
+  };
+
+  // const { color } = useParams();
+  // let selectedColor = colors.find((c) => c.name === color);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/colors" element={<ColorsRoute colors={colors} />} />
+          <Route
+            path="/colors/new"
+            element={<NewColorRoute addColor={addColor} />}
+          />
+          <Route
+            path="/colors/:color"
+            element={<ColorRoute colors={colors} />}
+          />
+          <Route path="*" element={<Navigate to="/colors" />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

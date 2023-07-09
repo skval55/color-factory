@@ -1,0 +1,16 @@
+.ColorRoute {
+    text-transform: uppercase;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    font-size: x-large;
+}
+
+.ColorRoute-link {
+    text-decoration: none;
+    color: black;
+}
+
+.ColorRoute-link:hover {
+    color: gray;
+}
